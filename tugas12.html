@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="tugas12.css">  
+
+</head>
+<body>
+    <div class="container">
+        <h1>Hitung Luas Keliling Lingkaran (pi = 3,14)</h1>
+        <form action="#" method="POST">
+            <label for="jari-jari">Jari-jari:</label>
+            <input type="number" id="jari-jari" name="jari-jari"><br><br>
+            
+            <button onclick="hitungKeliling()">Hitung Luas Permukaan Tabung</button>
+
+            
+            <p>Hasil: <span id="hasil"></span></p>
+            
+
+            
+        </form>
+    </div>
+
+    <script>
+        let hasilPerhitungan = "";
+
+        function hitungKeliling() {
+            
+            event.preventDefault();
+   
+            const jariJari = parseFloat(document.getElementById("jari-jari").value);
+
+            if (isNaN(jariJari)) {
+                document.getElementById("hasil").textContent = "Masukkan angka yang valid";
+                return;
+            }
+
+            const keliling = 2 * Math.PI * jariJari;
+
+            hasilPerhitungan = keliling.toFixed(2);
+
+            document.getElementById("hasil").textContent = hasilPerhitungan;
+        }
+    </script>
+</body>
+</html>
